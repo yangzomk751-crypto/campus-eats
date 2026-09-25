@@ -30,3 +30,8 @@ app.get('/db-test', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Campus Eats running at http://localhost:${PORT}`);
 });
+
+app.use(express.json());
+
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
